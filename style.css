@@ -14,7 +14,7 @@ body {
 .page {
     display: none;
     min-height: 100vh;
-    padding: 50px 20px;
+    padding: 45px 20px;
 }
 
 .page.active {
@@ -27,25 +27,29 @@ body {
     text-align: center;
 }
 
+h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+h3 {
+    margin-top: 20px;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
 .small-title {
     letter-spacing: 2px;
     font-size: 13px;
     margin-bottom: 20px;
     opacity: 0.7;
-}
-
-h1 {
-    font-size: 45px;
-    margin-bottom: 20px;
-}
-
-h2 {
-    margin-bottom: 18px;
-}
-
-h3 {
-    margin-top: 20px;
-    font-size: 25px;
 }
 
 .intro {
@@ -65,7 +69,7 @@ h3 {
 
 button {
     border: none;
-    padding: 18px 30px;
+    padding: 16px 28px;
     border-radius: 15px;
     font-size: 17px;
     font-weight: bold;
@@ -92,12 +96,165 @@ button:hover {
     font-size: 14px;
 }
 
+
+/* ============================= */
+/* BIRTHDAY EVOLUTION */
+/* ============================= */
+
+.evolution-intro {
+    margin-top: 40px;
+    padding: 45px 20px;
+}
+
+.dramatic-text {
+    font-size: 30px;
+    animation: fadeUp 1s ease;
+}
+
+.small-text {
+    font-size: 19px;
+    margin-top: 15px;
+}
+
+.reveal-btn {
+    margin-top: 30px;
+}
+
+
+/* OLD PHOTO */
+
+.photo-scene {
+    display: none;
+    margin: 40px auto;
+}
+
+.photo-scene.show {
+    display: block;
+    animation: dramaticPop 0.8s ease forwards;
+}
+
+.old-photo-wrap {
+    width: 330px;
+    margin: auto;
+    padding: 12px;
+    background: white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    transform: rotate(-3deg);
+}
+
+.old-photo {
+    width: 100%;
+    display: block;
+}
+
+.era-text {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+
+/* MODERN VERSION */
+
+.modern-scene {
+    display: none;
+    margin: 50px auto;
+}
+
+.modern-scene.show {
+    display: block;
+    animation: fadeUp 1s ease;
+}
+
+.modern-intro {
+    font-size: 21px;
+}
+
+.lush-text {
+    font-size: 28px;
+    margin: 10px 0 35px;
+}
+
+.photo-transition {
+    position: relative;
+    width: 350px;
+    height: 420px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.modern-photo {
+    position: absolute;
+    inset: 0;
+    padding: 12px;
+    background: white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.modern-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* OLD PAPER ON TOP */
+
+.torn-paper {
+    position: absolute;
+    z-index: 3;
+    inset: 0;
+    padding: 12px;
+    background: white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.torn-paper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.torn-paper.rip {
+    animation: tearAway 1.5s ease forwards;
+    transform-origin: center;
+}
+
+
+/* RIP LINE */
+
+.tear-line {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: rgba(0,0,0,0.25);
+    display: none;
+}
+
+.tear-line.active {
+    display: block;
+    animation: tearFlash 0.4s ease;
+}
+
+.upgrade-text {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-top: 25px;
+}
+
+
+/* ============================= */
+/* MISCHIEF */
+/* ============================= */
+
 .card {
     background: rgba(255,255,255,0.75);
     backdrop-filter: blur(10px);
     padding: 35px;
     border-radius: 25px;
-    margin: 30px 0;
+    margin: 40px 0;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
@@ -106,87 +263,170 @@ button:hover {
     line-height: 1.8;
 }
 
-.timeline {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-    margin: 30px 0;
-}
-
-.photo-placeholder {
-    width: 260px;
-    height: 260px;
-    border: 3px dashed #aaa;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255,255,255,0.5);
-}
-
-.photo-placeholder span {
-    font-size: 55px;
-}
-
-.photo-placeholder p {
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.photo-placeholder small {
-    opacity: 0.6;
-}
-
-.arrow {
-    font-size: 40px;
-}
-
-.caption {
-    margin-top: 20px;
-}
-
 .big-text {
     font-size: 21px !important;
     margin-top: 15px;
 }
 
-.eye-placeholder {
+
+/* ============================= */
+/* EYES */
+/* ============================= */
+
+.eyes-section {
+    position: relative;
+    margin: 80px auto;
+    min-height: 600px;
+    overflow: hidden;
+    padding: 40px 20px;
+}
+
+.eyes-text {
+    opacity: 0;
+}
+
+.eyes-section.active-eyes .eyes-text {
+    animation: fadeUp 1s ease forwards;
+}
+
+.sneaky-eye-photo {
+    position: absolute;
     width: 300px;
-    height: 260px;
-    margin: 25px auto;
-    border: 3px dashed #aaa;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 65px;
+    left: -350px;
+    top: 150px;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    transform: rotate(-8deg);
 }
 
-.eye-placeholder p {
-    font-size: 18px;
-    margin-top: 10px;
+.sneaky-eye-photo img {
+    width: 100%;
+    display: block;
 }
 
-.eye-placeholder small {
-    font-size: 13px;
-    opacity: 0.6;
+.eyes-section.active-eyes .sneaky-eye-photo {
+    animation: sneakIn 1.5s ease 1s forwards;
+}
+
+.eye-joke {
+    opacity: 0;
+    margin-top: 30px;
+}
+
+.eyes-section.active-eyes .eye-joke {
+    animation: fadeUp 1s ease 2.3s forwards;
 }
 
 .song {
+    margin: 25px 0;
     font-style: italic;
-    margin: 20px 0;
+    font-size: 18px !important;
 }
 
+
+/* ============================= */
+/* FINAL */
+/* ============================= */
+
 .final-card {
+    margin-top: 60px;
     margin-bottom: 40px;
 }
 
-.back-bottom {
-    margin-top: 10px;
+
+/* ============================= */
+/* ANIMATIONS */
+/* ============================= */
+
+@keyframes dramaticPop {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.2) rotate(-15deg);
+    }
+
+    70% {
+        transform: scale(1.1) rotate(4deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(-3deg);
+    }
 }
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes tearAway {
+
+    0% {
+        transform: translateX(0) rotate(0);
+        opacity: 1;
+    }
+
+    40% {
+        transform: translateX(-10px) rotate(-3deg);
+    }
+
+    100% {
+        transform: translateX(500px) rotate(15deg);
+        opacity: 0;
+    }
+}
+
+
+@keyframes tearFlash {
+
+    0% {
+        transform: scaleY(0);
+    }
+
+    50% {
+        transform: scaleY(1);
+    }
+
+    100% {
+        transform: scaleY(0);
+    }
+}
+
+
+@keyframes sneakIn {
+
+    0% {
+        left: -350px;
+        transform: rotate(-15deg);
+    }
+
+    60% {
+        left: 50%;
+        transform: translateX(-50%) rotate(5deg);
+    }
+
+    100% {
+        left: 50%;
+        transform: translateX(-50%) rotate(-3deg);
+    }
+}
+
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
 
 @media (max-width: 600px) {
 
@@ -194,20 +434,24 @@ button:hover {
         font-size: 32px;
     }
 
-    .timeline {
-        flex-direction: column;
+    .dramatic-text {
+        font-size: 24px;
     }
 
-    .arrow {
-        transform: rotate(90deg);
+    .old-photo-wrap,
+    .photo-transition {
+        width: 280px;
     }
 
-    .photo-placeholder {
-        width: 220px;
-        height: 220px;
+    .photo-transition {
+        height: 350px;
     }
 
     .card {
         padding: 25px 18px;
+    }
+
+    .sneaky-eye-photo {
+        width: 240px;
     }
 }
